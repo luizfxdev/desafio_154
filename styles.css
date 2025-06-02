@@ -1,0 +1,412 @@
+/* Reset e estilos base */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: url('/images/background.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Container principal - ATUALIZADO */
+.container {
+    width: 95%;
+    max-width: 900px;
+    margin: 2rem 0 2rem 5%; /* Posicionado mais à esquerda */
+    padding: 2.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    position: relative;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #4fc3f7;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #b3e5fc;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Seção de entrada - ATUALIZADA */
+.input-section {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Reduzi o gap para 0.8rem (era 1rem) */
+    align-items: flex-end;
+}
+
+.input-group {
+    flex: 1;
+    margin-bottom: 0; /* Remove margem inferior que pode desalinhar */
+}
+
+
+.input-row {
+    display: flex;
+    gap: 0.8rem; /* Reduzi o gap para 0.8rem (era 1rem) */
+    width: 100%;
+    align-items: flex-end; /* Adicionei para alinhar na base */
+}
+
+.form-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-end; /* Alinha todos os itens pela base */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.7rem; /* Mais espaço abaixo do label */
+    color: #4fc3f7;
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+/* Inputs menores - ATUALIZADO */
+input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem; /* Reduzi o padding vertical (era 0.7rem) */
+    border-radius: 5px;
+    border: 1px solid #4fc3f7;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    height: 40px; /* Reduzi a altura (era 45px) */
+    box-sizing: border-box; /* Garante que padding não some à largura */
+}
+
+input[type="text"]:focus {
+    height: 40px; /* Altura igual ao botão */
+    padding: 0.6rem 0.8rem;
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px; /* Mesma altura dos inputs */
+    margin-bottom: 4px; /* Ajuste fino para alinhamento visual */
+    /* Restante das propriedades permanece igual */
+    padding: 0;
+    border-radius: 50%;
+    background: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+}
+
+
+.add-btn:hover {
+    background: #00e5ff;
+    transform: scale(1.1);
+}
+
+.add-btn.clicked {
+    transform: scale(0.9);
+    background: #00a896;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 121, 107, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 121, 107, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 121, 107, 0);
+    }
+}
+
+/* Tabela de exibição */
+.data-display {
+    background: rgba(0, 20, 30, 0.7);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    margin: 2rem 0; /* Mais espaço vertical */
+    overflow: hidden;
+}
+
+.table-header {
+    display: flex;
+    background: rgba(0, 100, 150, 0.3);
+    padding: 1rem; /* Mais padding */
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.header-cell {
+    flex: 1;
+    font-weight: bold;
+    color: #4fc3f7;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+}
+
+.planet-header {
+    flex: 0 0 150px; /* Largura aumentada */
+}
+
+.table-body {
+    max-height: 300px; /* Altura aumentada */
+    overflow-y: auto;
+}
+
+.planet-row {
+    display: flex;
+    padding: 1rem; /* Mais padding */
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.planet-row:last-child {
+    border-bottom: none;
+}
+
+.planet-name {
+    flex: 0 0 150px; /* Largura aumentada */
+    color: #fff;
+    font-weight: 500;
+}
+
+.planet-resources {
+    flex: 1;
+    color: #b3e5fc;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Barra de rolagem */
+.table-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+    background: rgba(79, 195, 247, 0.5);
+    border-radius: 4px;
+}
+
+.table-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 195, 247, 0.7);
+}
+
+/* Grupo de botões */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem; /* Mais espaço abaixo */
+    gap: 1.5rem; /* Mais espaço entre botões */
+}
+
+.button-group button {
+    flex: 1;
+}
+
+/* Estilo dos botões animados */
+.glow-on-hover {
+    width: 100%;
+    height: 55px; /* Altura aumentada */
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem; /* Fonte maior */
+    letter-spacing: 1px;
+    padding: 0.5rem;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #48ff00, #00ffd5, #7a00ff, #48ff00, #00ffd5, #002bff, #00ffd5, #7a00ff, #48ff00);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Resultado */
+.result-container {
+    margin-top: 2rem; /* Mais espaço acima */
+}
+
+.result-container h3 {
+    color: #4fc3f7;
+    margin-bottom: 1rem; /* Mais espaço abaixo */
+    font-size: 1.3rem;
+}
+
+.result-box {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid #4fc3f7;
+    min-height: 60px; /* Altura aumentada */
+    font-size: 1.3rem; /* Fonte maior */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 10px 5px rgba(79, 195, 247, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(79, 195, 247, 0); }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        margin: 2rem auto; /* Centralizado em mobile */
+        padding: 1.5rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .planet-header, .planet-name {
+        flex: 0 0 100px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .header-cell, .planet-name {
+        font-size: 0.85rem;
+    }
+    
+    .planet-resources {
+        font-size: 0.85rem;
+    }
+    
+    input[type="text"] {
+        padding: 0.6rem;
+        height: 40px;
+    }
+    
+    .add-btn, .glow-on-hover {
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    /* Ajuste para mobile */
+    .input-row, .form-row {
+        gap: 0.5rem; /* Espaçamento menor em mobile */
+    }
+    
+    .add-btn {
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+    }
+    
+    .input-group {
+        min-width: 100%;
+    }
+    
+    .result-box {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}

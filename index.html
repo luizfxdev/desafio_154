@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça ao Tesouro Galáctico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <h1>Caça ao Tesouro Galáctico</h1>
+        <p class="subtitle">Encontre o planeta com todos os recursos mágicos</p>
+        
+        <div class="input-section">
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="planetName">Nome do Planeta:</label>
+                    <input type="text" id="planetName" placeholder="Ex: Alpha-7">
+                </div>
+                <div class="input-group">
+                    <label for="planetResources">Recursos:</label>
+                    <input type="text" id="planetResources" placeholder="Ex: stardust, quantum foam">
+                </div>
+                <button id="addPlanet" class="add-btn" title="Adicionar planeta">+</button>
+            </div>
+        </div>
+        
+        <div class="data-display">
+            <div class="table-header">
+                <div class="header-cell planet-header">Planetas</div>
+                <div class="header-cell resources-header">Recursos</div>
+            </div>
+            <div id="planetsTable" class="table-body"></div>
+        </div>
+        
+        <div class="button-group">
+            <button id="revealBtn" class="glow-on-hover">REVELAR</button>
+            <button id="resetBtn" class="glow-on-hover">LIMPAR</button>
+        </div>
+        
+        <div class="result-container">
+            <h3>Resultado da Busca:</h3>
+            <div id="result" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
