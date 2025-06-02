@@ -19,6 +19,10 @@ const planets = [
   { name: "Zeta-5", resources: ["stardust", "quantum foam", "dark matter"] },
   { name: "Omega-3", resources: ["dark matter"] }
 ];
+
+
 Saída Esperada:
+
+
 "Zeta-5"
 
